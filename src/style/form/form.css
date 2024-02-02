@@ -1,0 +1,62 @@
+@import '/src/style/form/form_components.css';
+
+#form-wrap {
+  padding: 2em 0;
+  border: 3px solid rgb(116, 117, 104);
+}
+
+#form-title > h1 {
+ text-align: center;
+ text-decoration: underline;
+}
+
+.input-cont {
+  height: auto;
+  display: grid;
+  row-gap: 3vh;
+  grid-template-rows: repeat(3, auto);
+}
+
+input,
+textarea {
+  border-radius: 5px;
+}
+
+input:focus,
+textarea:focus {
+  outline: unset;
+}
+
+textarea {
+  resize: vertical;
+}
+
+.input-cont div {
+  height: fit-content;
+}
+
+.input-fields {
+  padding: 1em 2em;
+  display: grid;
+  row-gap: 1vh;
+}
+
+.input-fields > * {
+  display: grid;
+}
+
+.section-title {
+  margin-bottom: unset;
+  text-align: center;
+  font-weight: bold;
+}
+
+#submit-cont {
+  padding: 2vh;
+  justify-self: end;
+}
+
+#submit-cont * {
+  height: 4vh;
+  width: 8vw;
+}

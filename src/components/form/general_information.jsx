@@ -1,41 +1,51 @@
-export default function GeneralInformation({name, email, tel}) {
+export default function GeneralInformation({name, email, tel, objective}) {
 return (
     <div>
-      <h2>General Information</h2>
+      <div className="input-fields">
+        <div id="name">
+          <label htmlFor="name">Name</label>
 
-      <span>
-        <label htmlFor="name">Name</label>
-        <input
-          type="text"
-          id='name'
-          name='name'
-          defaultValue={name && name.value}
-        />
-      </span>
+          <input
+            type="text"
+            id='name'
+            name='name'
+            defaultValue={name && name.value}
+          />
+        </div>
 
-      <br />
+        <div id="contacts">
+          <label>Contact Details</label>
 
-      <span>
-        <label htmlFor="email">Email</label>
-        <input
-          type="email"
-          id='email'
-          name='email'
-          defaultValue={email && email.value}
-        />
-      </span>
+          <div>
+            <input
+              type="email"
+              id='email'
+              name='email'
+              placeholder="email"
+              defaultValue={email && email.value}
+            />
 
-      <br />
+            <input
+              type="tel"
+              id='tel'
+              name='tel'
+              placeholder="tel"
+              defaultValue={tel && tel.value}
+            />
+          </div>
+        </div>
 
-      <span>
-        <label htmlFor="tel">Phone Number</label>
-        <input
-          type="tel"
-          id='tel'
-          name='tel'
-          defaultValue={tel && tel.value}
-        />
-      </span>
+        <div>
+          <label htmlFor="objective">Objective</label>
+
+          <textarea
+            type="text"
+            id='objective'
+            name='objective'
+            defaultValue={objective && objective.value}
+          />
+        </div>
+      </div>
     </div>
   )
 }

@@ -16,7 +16,7 @@ export default function Components() {
   );
 
   return (
-    <>
+    <div className="main">
       {form.toEdit ? (
         <Form
           formData={form.data}
@@ -28,6 +28,6 @@ export default function Components() {
           toEdit={handleEdit}
         />
       )}
-    </>
+    </div>
   )
 }

@@ -1,41 +1,40 @@
-export default function PracticalExperience({company, position, responsibility}) {
+export default function PracticalExperience({index, company, position, responsibility}) {
   return (
     <div>
-      <h2>Work Experience</h2>
+      <div className="input-fields">
+        <label>Company</label>
 
-      <span>
-        <label htmlFor="company">Company</label>
-        <input
-           type="text"
-           id='company'
-           name='company'
-           defaultValue={company && company.value}
-        />
-      </span>
+        <div id="company">
+          <div>
+            <input
+              type="text"
+              id={'company' + index}
+              name={'company' + index}
+              placeholder="Name"
+              defaultValue={company && company.value}
+            />
 
-      <br />
+            <input
+              type="text"
+              id={'position' + index}
+              name={'position' + index}
+              placeholder="Position"
+              defaultValue={position && position.value}
+            />
+          </div>
+        </div>
 
-      <span>
-        <label htmlFor="position">Position</label>
-        <input
-           type="text"
-           id='position'
-           name='position'
-           defaultValue={position && position.value}
-        />
-      </span>
+        <div>
+          <label>Responsibility</label>
 
-      <br />
-
-      <span>
-        <label htmlFor="responsibilty">Responsibility</label>
-        <input
-           type="text"
-           id='responsibility'
-           name='responsibility'
-           defaultValue={responsibility && responsibility.value}
-        />
-      </span>
+          <textarea
+            type="text"
+            id={'responsibility' + index}
+            name={'responsibility' + index}
+            defaultValue={responsibility && responsibility.value}
+          />
+        </div>
+      </div>
     </div>
   )
 }

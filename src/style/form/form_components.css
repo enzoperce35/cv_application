@@ -1,0 +1,14 @@
+#study-year, #contacts, #company {
+  display: grid;
+}
+
+#study-year div,
+#contacts div,
+#company div {
+  display: inline-flex;
+  column-gap: 1vw;
+}
+
+#study-year input {
+  width: 4vw;
+}

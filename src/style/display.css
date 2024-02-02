@@ -1,0 +1,44 @@
+#display {
+  padding: 0 2vw 4vw;
+  border: 3px solid rgb(116, 117, 104);
+}
+
+.body-info h3,
+.header-info h1 {
+  margin-top: 4vh;
+  margin-bottom: 5px;
+}
+
+.body-values div,
+.header-info div {
+  display: grid;
+  row-gap: .3vh;
+}
+
+#obj-value p {
+  font-style: italic;
+  text-indent: 25px;
+}
+
+.body-values {
+  display: grid;
+  row-gap: 4vh;
+  margin-left: 1vw;
+}
+
+.body-values * > span:first-child {
+  font-weight: bold;
+  font-style: italic;
+}
+
+#company-values * > :first-child {
+  margin-bottom: 5px;
+}
+
+#company-values * > :nth-child(2) {
+  text-decoration: underline;
+}
+
+#company-values * > :nth-child(3) {
+  margin-left: 20px;
+}
