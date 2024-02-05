@@ -2,10 +2,6 @@
 @import '/src/style/form/educational_experience.css';
 @import '/src/style/form/practical_experience.css';
 
-form {
-  width: 120%;
-}
-
 #form-wrap {
   padding: 2em 0;
   border: 3px solid rgb(116, 117, 104);
@@ -33,6 +29,12 @@ input:focus,
 select:focus,
 textarea:focus {
   outline: unset;
+}
+
+input:invalid,
+select:invalid,
+textarea:invalid {
+  border-color: red;
 }
 
 textarea {
@@ -70,10 +72,6 @@ textarea {
 }
 
 @media screen and (max-width: 650px) {
-  form {
-   width: 95vw;
-  }
-
   #form-title {
     font-size: 4vw;
   }

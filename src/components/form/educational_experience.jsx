@@ -4,10 +4,10 @@ export default function EducationalExperience({suffix}) {
   function optionItems(prefix) {
     return (
       <>
-        <option className="year-select-filler" value="" disabled selected>{prefix.substr(4)}</option>
+        <option value="" disabled selected>{prefix.substr(4)}</option>
 
         {years.map((year) => {
-          return <option>{year}</option>
+          return <option key={suffix + prefix + year}>{year}</option>
         })}
 
         <option value=""></option>
