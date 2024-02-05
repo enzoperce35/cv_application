@@ -1,25 +1,29 @@
-export default function PracticalExperience({index, company, position, responsibility}) {
+export default function PracticalExperience({suffix}) {
   return (
     <div>
       <div className="input-fields">
-        <label>Company</label>
+        <label id="contacts-header">Company</label>
 
         <div id="company">
-          <div>
-            <input
-              type="text"
-              id={'company' + index}
-              name={'company' + index}
-              placeholder="Name"
-              defaultValue={company && company.value}
-            />
+          <div className="company-item">
+            <label htmlFor="company" hidden={true}>Company</label>
 
             <input
               type="text"
-              id={'position' + index}
-              name={'position' + index}
+              id={'company'}
+              placeholder="Name"
+              name={'company' + suffix}
+            />
+          </div>
+
+          <div className="company-item">
+            <label htmlFor="position" hidden={true}>Position</label>
+
+            <input
+              type="text"
+              id={'position'}
               placeholder="Position"
-              defaultValue={position && position.value}
+              name={'position' + suffix}
             />
           </div>
         </div>
@@ -29,9 +33,8 @@ export default function PracticalExperience({index, company, position, responsib
 
           <textarea
             type="text"
-            id={'responsibility' + index}
-            name={'responsibility' + index}
-            defaultValue={responsibility && responsibility.value}
+            id={'responsibility'}
+            name={'responsibility' + suffix}
           />
         </div>
       </div>

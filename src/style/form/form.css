@@ -1,4 +1,10 @@
-@import '/src/style/form/form_components.css';
+@import '/src/style/form/general_information.css';
+@import '/src/style/form/educational_experience.css';
+@import '/src/style/form/practical_experience.css';
+
+form {
+  width: 120%;
+}
 
 #form-wrap {
   padding: 2em 0;
@@ -18,11 +24,13 @@
 }
 
 input,
+select,
 textarea {
   border-radius: 5px;
 }
 
 input:focus,
+select:focus,
 textarea:focus {
   outline: unset;
 }
@@ -53,10 +61,24 @@ textarea {
 
 #submit-cont {
   padding: 2vh;
-  justify-self: end;
 }
 
 #submit-cont * {
   height: 4vh;
-  width: 8vw;
+  width: 8rem;
+  float: right;
+}
+
+@media screen and (max-width: 650px) {
+  form {
+   width: 95vw;
+  }
+
+  #form-title {
+    font-size: 4vw;
+  }
+
+  ::placeholder {
+    font-size: .80em;
+  }
 }

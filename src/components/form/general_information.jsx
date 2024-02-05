@@ -1,5 +1,5 @@
-export default function GeneralInformation({name, email, tel, objective}) {
-return (
+export default function GeneralInformation() {
+  return (
     <div>
       <div className="input-fields">
         <div id="name">
@@ -9,29 +9,34 @@ return (
             type="text"
             id='name'
             name='name'
-            defaultValue={name && name.value}
           />
         </div>
 
         <div id="contacts">
-          <label>Contact Details</label>
+          <label id="contacts-header">Contact Details</label>
 
           <div>
-            <input
-              type="email"
-              id='email'
-              name='email'
-              placeholder="email"
-              defaultValue={email && email.value}
-            />
+            <div className="contacts-item">
+              <label htmlFor="email" hidden={true}>Email</label>
 
-            <input
-              type="tel"
-              id='tel'
-              name='tel'
-              placeholder="tel"
-              defaultValue={tel && tel.value}
-            />
+              <input
+                type="email"
+                id='email'
+                name='email'
+                placeholder="email"
+              />
+            </div>
+
+            <div className="contacts-item">
+              <label htmlFor="tel" hidden={true}>Tel</label>
+
+              <input
+                type="tel"
+                id='tel'
+                name='tel'
+                placeholder="phone number"
+              />
+            </div>
           </div>
         </div>
 
@@ -42,7 +47,6 @@ return (
             type="text"
             id='objective'
             name='objective'
-            defaultValue={objective && objective.value}
           />
         </div>
       </div>

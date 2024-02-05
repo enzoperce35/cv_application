@@ -1,0 +1,18 @@
+#study-year {
+  display: grid;
+}
+
+#study-year div {
+  display: inline-flex;
+  column-gap: 1vw;
+}
+
+#study-year select {
+  width: 4vw;
+}
+
+@media screen and (max-width: 650px) {
+  #study-year select {
+    width: 20vw;
+  }
+}

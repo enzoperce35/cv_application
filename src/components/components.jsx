@@ -17,17 +17,16 @@ export default function Components() {
 
   return (
     <div className="main">
-      {form.toEdit ? (
         <Form
-          formData={form.data}
+          toEdit={form.toEdit}
           toSubmit={handleSubmit}
         />
-      ) : (
+
         <Display
+          toEdit={form.toEdit}
           formData={form.data}
-          toEdit={handleEdit}
+          handleEdit={handleEdit}
         />
-      )}
     </div>
   )
 }

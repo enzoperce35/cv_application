@@ -1,4 +1,20 @@
-export default function EducationalExperience({index, school, studyTitle, studyYearStart, studyYearEnd}) {
+export default function EducationalExperience({suffix}) {
+  const years = Array.from({ length: 100 }, (_, i) => new Date().getFullYear() - i);
+
+  function optionItems(prefix) {
+    return (
+      <>
+        <option className="year-select-filler" value="" disabled selected>{prefix.substr(4)}</option>
+
+        {years.map((year) => {
+          return <option>{year}</option>
+        })}
+
+        <option value=""></option>
+      </>
+    )
+  }
+
   return (
     <div>
       <div className="input-fields">
@@ -7,9 +23,8 @@ export default function EducationalExperience({index, school, studyTitle, studyY
 
           <input
             type="text"
-            id={'school' + index}
-            name={'school' + index}
-            defaultValue={school && school.value}
+            id={'school'}
+            name={'school' + suffix}
           />
         </div>
 
@@ -18,9 +33,8 @@ export default function EducationalExperience({index, school, studyTitle, studyY
 
           <input
             type='text'
-            id={'studyTitle' + index}
-            name={'studyTitle' + index}
-            defaultValue={studyTitle && studyTitle.value}
+            id={'studyTitle'}
+            name={'studyTitle' + suffix}
           />
         </div>
 
@@ -28,21 +42,13 @@ export default function EducationalExperience({index, school, studyTitle, studyY
           <label>Year</label>
 
           <div>
-            <input
-              type='number'
-              id={'studyYearStart' + index}
-              name={'studyYearStart' + index}
-              placeholder="Start"
-              defaultValue={studyYearStart && studyYearStart.value}
-            />
+            <select id={'studyYearStart'} placeholder="Start" name={'studyYearStart' + suffix}>
+               {optionItems('yearStart')}
+            </select>
 
-            <input
-              type='number'
-              id={'studyYearEnd' + index}
-              name={'studyYearEnd' + index}
-              placeholder="End"
-              defaultValue={studyYearEnd && studyYearEnd.value}
-            />
+            <select id={'studyYearStart'} placeholder="End" name={'studyYearEnd' + suffix}>
+               {optionItems('yearEnd')}
+            </select>
           </div>
         </div>
       </div>

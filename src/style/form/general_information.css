@@ -1,0 +1,40 @@
+#contacts{
+  display: grid;
+}
+
+#contacts div {
+  display: inline-flex;
+  column-gap: 1vw;
+}
+
+#contacts div input {
+  width: 10vw;
+}
+
+@media screen and (max-width: 650px) {
+  #contacts-header {
+    display: none;
+  }
+
+  #contacts div,
+ .contacts-item * {
+    width: 100%;
+    display: grid;
+  }
+
+  #contacts > div {
+    row-gap: 1vh;
+  }
+
+  #contacts div input {
+    width: 70%;
+  }
+
+  .contacts-item * label {
+    visibility: 'visible';
+  }
+
+  .contacts-item input::placeholder {
+    color: transparent;
+  }
+}
