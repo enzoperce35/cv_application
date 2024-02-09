@@ -26,11 +26,11 @@ export default function Form({toEdit, toSubmit}) {
             </h3>
 
             <div className="section-items">
-              <EducationalExperience suffix={'1'} />
+              <EducationalExperience section={'1'} />
 
-              <EducationalExperience suffix={'2'} />
+              <EducationalExperience section={'2'} />
 
-              <EducationalExperience suffix={'3'} />
+              <EducationalExperience section={'3'} />
             </div>
           </div>
 
@@ -40,11 +40,11 @@ export default function Form({toEdit, toSubmit}) {
             </h3>
 
             <div className="section-items">
-              <PracticalExperience suffix={'1'} />
+              <PracticalExperience section={'1'} />
 
-              <PracticalExperience suffix={'2'} />
+              <PracticalExperience section={'2'} />
 
-              <PracticalExperience suffix={'3'} />
+              <PracticalExperience section={'3'} />
             </div>
           </div>
         </div>

@@ -9,6 +9,7 @@ export default function GeneralInformation() {
             type="text"
             id='name'
             name='name'
+            required
           />
         </div>
 
@@ -47,6 +48,8 @@ export default function GeneralInformation() {
             type="text"
             id='objective'
             name='objective'
+            minLength={80}
+            maxLength={160}
           />
         </div>
       </div>

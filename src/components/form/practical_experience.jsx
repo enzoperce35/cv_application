@@ -1,4 +1,19 @@
-export default function PracticalExperience({suffix}) {
+import { useState } from "react";
+import { formValidator } from "./validator";
+
+export default function PracticalExperience({section}) {
+  const [minorFields, setMinorFields] = useState({
+    position: false,
+    responsibility: false
+  });
+
+  const validator = new formValidator(section, minorFields);
+
+  const changeFieldState = (event) => setMinorFields({
+    ...minorFields,
+    [event.target.id]: event.target.value === '' ? false : true }
+  )
+
   return (
     <div>
       <div className="input-fields">
@@ -12,7 +27,10 @@ export default function PracticalExperience({suffix}) {
               type="text"
               id={'company'}
               placeholder="Name"
-              name={'company' + suffix}
+              name={'company' + section}
+              required={validator.require()}
+              onChange={(e) => validator.emitDefaultMessage(e)}
+              onInvalid={(e) => validator.emitCustomMessage(e)}
             />
           </div>
 
@@ -23,7 +41,8 @@ export default function PracticalExperience({suffix}) {
               type="text"
               id={'position'}
               placeholder="Position"
-              name={'position' + suffix}
+              name={'position' + section}
+              onChange={(e) => changeFieldState(e)}
             />
           </div>
         </div>
@@ -34,7 +53,10 @@ export default function PracticalExperience({suffix}) {
           <textarea
             type="text"
             id={'responsibility'}
-            name={'responsibility' + suffix}
+            name={'responsibility' + section}
+            minLength={50}
+            maxLength={200}
+            onChange={(e) => changeFieldState(e)}
           />
         </div>
       </div>

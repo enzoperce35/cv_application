@@ -31,9 +31,9 @@ textarea:focus {
   outline: unset;
 }
 
-input:invalid,
-select:invalid,
-textarea:invalid {
+input:invalid:focus,
+select:invalid:focus,
+textarea:invalid:focus {
   border-color: red;
 }
 

@@ -1,19 +1,35 @@
-export default function EducationalExperience({suffix}) {
+import { useState } from "react";
+import {formValidator} from "./validator";
+
+function OptionItems({prefix, section}) {
   const years = Array.from({ length: 100 }, (_, i) => new Date().getFullYear() - i);
 
-  function optionItems(prefix) {
-    return (
-      <>
-        <option value="" disabled selected>{prefix.substr(4)}</option>
+  return (
+    <>
+      <option value="" disabled selected>{prefix.substr(4)}</option>
 
-        {years.map((year) => {
-          return <option key={suffix + prefix + year}>{year}</option>
-        })}
+      {years.map((year) => {
+        return <option key={prefix + section + year}>{year}</option>
+      })}
 
-        <option value=""></option>
-      </>
-    )
-  }
+      <option value=""></option>
+    </>
+  )
+}
+
+export default function EducationalExperience({section}) {
+  const [minorFields, setMinorFields] = useState({
+    studyTitle: false,
+    studyYearStart: false,
+    studyYearEnd: false
+  });
+
+  const validator = new formValidator(section, minorFields);
+
+  const changeFieldState = (event) => setMinorFields({
+    ...minorFields,
+    [event.target.id]: event.target.value === '' ? false : true }
+  )
 
   return (
     <div>
@@ -24,7 +40,10 @@ export default function EducationalExperience({suffix}) {
           <input
             type="text"
             id={'school'}
-            name={'school' + suffix}
+            name={'school' + section}
+            required={validator.require()}
+            onChange={(e) => validator.emitDefaultMessage(e)}
+            onInvalid={(e) => validator.emitCustomMessage(e)}
           />
         </div>
 
@@ -34,7 +53,8 @@ export default function EducationalExperience({suffix}) {
           <input
             type='text'
             id={'studyTitle'}
-            name={'studyTitle' + suffix}
+            name={'studyTitle' + section}
+            onChange={(e) => changeFieldState(e)}
           />
         </div>
 
@@ -42,12 +62,24 @@ export default function EducationalExperience({suffix}) {
           <label>Year</label>
 
           <div>
-            <select id={'studyYearStart'} placeholder="Start" name={'studyYearStart' + suffix}>
-               {optionItems('yearStart')}
+            <select
+              defaultValue=''
+              placeholder="Start"
+              id={'studyYearStart'}
+              name={'studyYearStart' + section}
+              onChange={(e) => changeFieldState(e)}
+            >
+              <OptionItems prefix='yearStart' section={section} />
             </select>
 
-            <select id={'studyYearStart'} placeholder="End" name={'studyYearEnd' + suffix}>
-               {optionItems('yearEnd')}
+            <select
+              defaultValue=''
+              placeholder="End"
+              id={'studyYearEnd'}
+              name={'studyYearEnd' + section}
+              onChange={(e) => changeFieldState(e)}
+            >
+              {<OptionItems prefix='yearEnd' section={section} />}
             </select>
           </div>
         </div>
