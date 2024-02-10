@@ -1,5 +1,8 @@
 #company {
   display: grid;
+}
+
+#company div {
   display: inline-flex;
   column-gap: 1vw;
 }
@@ -9,11 +12,7 @@
 }
 
 @media screen and (max-width: 650px) {
-  #contacts-header {
-    display: none;
-  }
-
-  #company,
+ #company div,
  .company-item * {
     width: 100%;
     display: grid;
@@ -25,10 +24,6 @@
 
   #company div input {
     width: 80%;
-  }
-
-  .company-item * label {
-    visibility: 'visible';
   }
 
   .company-item input::placeholder {

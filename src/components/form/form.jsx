@@ -1,11 +1,11 @@
-import GeneralInformation from "./general_information"
-import EducationalExperience from "./educational_experience"
-import PracticalExperience from "./practical_experience"
+import React from 'react';
+import GeneralInformation from './general_information';
+import EducationalExperience from './educational_experience';
+import PracticalExperience from './practical_experience';
 
-export default function Form({toEdit, toSubmit}) {
-
+export default function Form({ toEdit, toSubmit }) {
   return (
-    <form style={{display: toEdit ? 'block' : 'none'}} onSubmit={(e) => toSubmit(e)}>
+    <form style={{ display: toEdit ? 'block' : 'none' }} onSubmit={(e) => toSubmit(e)}>
       <div id="form-wrap">
         <div id="form-title">
           <h1>CV Form</h1>
@@ -17,7 +17,7 @@ export default function Form({toEdit, toSubmit}) {
               General Information
             </h3>
 
-            <GeneralInformation/>
+            <GeneralInformation />
           </div>
 
           <div id="educ-info">
@@ -26,11 +26,11 @@ export default function Form({toEdit, toSubmit}) {
             </h3>
 
             <div className="section-items">
-              <EducationalExperience section={'1'} />
+              <EducationalExperience section="1" />
 
-              <EducationalExperience section={'2'} />
+              <EducationalExperience section="2" />
 
-              <EducationalExperience section={'3'} />
+              <EducationalExperience section="3" />
             </div>
           </div>
 
@@ -40,11 +40,11 @@ export default function Form({toEdit, toSubmit}) {
             </h3>
 
             <div className="section-items">
-              <PracticalExperience section={'1'} />
+              <PracticalExperience section="1" />
 
-              <PracticalExperience section={'2'} />
+              <PracticalExperience section="2" />
 
-              <PracticalExperience section={'3'} />
+              <PracticalExperience section="3" />
             </div>
           </div>
         </div>
@@ -54,5 +54,5 @@ export default function Form({toEdit, toSubmit}) {
         <input type="submit" />
       </div>
     </form>
-  )
+  );
 }

@@ -51,7 +51,7 @@ textarea {
   row-gap: 1vh;
 }
 
-.input-fields > * {
+.input-fields label {
   display: grid;
 }
 
@@ -71,6 +71,14 @@ textarea {
   float: right;
 }
 
+.head-names {
+  display: block;
+}
+
+.sub-names {
+  display: none;
+}
+
 @media screen and (max-width: 650px) {
   #form-title {
     font-size: 4vw;
@@ -78,5 +86,13 @@ textarea {
 
   ::placeholder {
     font-size: .80em;
+  }
+
+  .head-names {
+    display: none;
+  }
+
+  .sub-names {
+    display: block;
   }
 }

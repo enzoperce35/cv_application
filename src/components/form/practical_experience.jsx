@@ -1,65 +1,74 @@
-import { useState } from "react";
-import { formValidator } from "./validator";
+import React, { useState } from 'react';
+import { FormValidator } from './validator';
 
-export default function PracticalExperience({section}) {
+export default function PracticalExperience({ section }) {
   const [minorFields, setMinorFields] = useState({
     position: false,
-    responsibility: false
+    responsibility: false,
   });
 
-  const validator = new formValidator(section, minorFields);
+  const validator = new FormValidator(section, minorFields);
 
   const changeFieldState = (event) => setMinorFields({
     ...minorFields,
-    [event.target.id]: event.target.value === '' ? false : true }
-  )
+    [event.target.id]: event.target.value !== '',
+  });
 
   return (
     <div>
       <div className="input-fields">
-        <label id="contacts-header">Company</label>
 
         <div id="company">
-          <div className="company-item">
-            <label htmlFor="company" hidden={true}>Company</label>
+          <span className="head-names">Company</span>
 
-            <input
-              type="text"
-              id={'company'}
-              placeholder="Name"
-              name={'company' + section}
-              required={validator.require()}
-              onChange={(e) => validator.emitDefaultMessage(e)}
-              onInvalid={(e) => validator.emitCustomMessage(e)}
-            />
-          </div>
+          <div>
+            <div className="company-item">
+              <label htmlFor="company">
+                <span className="sub-names">Company</span>
 
-          <div className="company-item">
-            <label htmlFor="position" hidden={true}>Position</label>
+                <input
+                  type="text"
+                  id="company"
+                  placeholder="Name"
+                  name={`company${section}`}
+                  required={validator.require()}
+                  onChange={(e) => validator.emitDefaultMessage(e)}
+                  onInvalid={(e) => validator.emitCustomMessage(e)}
+                />
+              </label>
+            </div>
 
-            <input
-              type="text"
-              id={'position'}
-              placeholder="Position"
-              name={'position' + section}
-              onChange={(e) => changeFieldState(e)}
-            />
+            <div className="company-item">
+              <label htmlFor="position">
+                <span className="sub-names">Position</span>
+
+                <input
+                  type="text"
+                  id="position"
+                  placeholder="Position"
+                  name={`position${section}`}
+                  onChange={(e) => changeFieldState(e)}
+                />
+              </label>
+            </div>
           </div>
         </div>
 
         <div>
-          <label>Responsibility</label>
+          <label htmlFor="responsibility">
+            Responsibility
 
-          <textarea
-            type="text"
-            id={'responsibility'}
-            name={'responsibility' + section}
-            minLength={50}
-            maxLength={200}
-            onChange={(e) => changeFieldState(e)}
-          />
+            <textarea
+              type="text"
+              id="responsibility"
+              name={`responsibility${section}`}
+              minLength={50}
+              maxLength={200}
+              onChange={(e) => changeFieldState(e)}
+            />
+          </label>
         </div>
       </div>
     </div>
-  )
+  );
 }
