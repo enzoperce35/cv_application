@@ -1,8 +1,22 @@
-# React + Vite
+# CV Application
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Description
+A 'TOP' primary React course project for React basics and principles.
 
-Currently, two official plugins are available:
+### Fill up the form with programmatically validated entries.
+![alt text](src/screenshots/cv_editor.png)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### Look at the preview upon submission, click anywhere to go back and edit.
+![alt text](src/screenshots/cv_preview.png)
+
+## React lessons covered
+- React set-up with Vite
+- Rendering Components using JSX
+- State
+- Props
+
+## Project Link
+https://www.theodinproject.com/lessons/react-new-cv-application
+
+## Live View
+https://cv-app02112024.netlify.app/
