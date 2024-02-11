@@ -4,10 +4,10 @@
 A 'TOP' primary React course project for React basics and principles.
 
 ### Fill up the form with programmatically validated entries.
-![alt text](src/screenshots/cv_editor.png)
+![alt text](screenshots/cv_editor.png)
 
 ### Look at the preview upon submission, click anywhere to go back and edit.
-![alt text](src/screenshots/cv_preview.png)
+![alt text](screenshots/cv_preview.png)
 
 ## React lessons covered
 - React set-up with Vite
